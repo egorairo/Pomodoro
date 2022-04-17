@@ -1,0 +1,167 @@
+:root {
+  --darkGray: #262626;
+  --mainWhite: #f5f5f5;
+  --muteWhite: #a6a6a6;
+}
+
+html {
+  background-color: #111;
+  font-family: 'Roboto', sans-serif;
+  color: var(--mainWhite);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p,
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-4 {
+  margin-right: 16px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-6 {
+  margin-bottom: 24px;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.divider {
+  width: 100%;
+  margin: 16px 0;
+  border-color: var(--muteWhite);
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  padding: 24px;
+  background-color: var(--darkGray);
+  border-radius: 25px;
+  border: 1px solid;
+  border-color: #3c3c3c;
+}
+
+.app header {
+  display: flex;
+  align-items: center;
+}
+
+.app header img {
+  width: 40px;
+  height: auto;
+}
+
+.settings {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.settings__state {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: 300;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  padding: 12px 18px;
+  background: transparent;
+  color: var(--muteWhite);
+  border: 1px solid;
+  border-radius: 12px;
+  font-weight: 300;
+  transition: color 0.15s, background 0.15s;
+}
+
+.btn:hover {
+  background: var(--muteWhite);
+  color: var(--darkGray);
+}
+
+.btn_square {
+  min-width: auto;
+  font-size: 24px;
+}
+
+.btn__icon {
+  background: transparent;
+  border: none;
+}
+
+.btn__icon svg {
+  width: 16px;
+  fill: var(--mainWhite);
+}
+
+.timer {
+  font-size: 60px;
+}
+
+.app[data-state='default'] [data-id='pauseandcontinue'],
+.app[data-state='default'] [data-id='stop'],
+.app[data-state='default'] [data-id='settingsState'],
+.app[data-state='default'] [data-id='cancel'],
+.app[data-state='default'] [data-id='imerForSetWrapper'],
+.app[data-state='default'] [data-id='save'] {
+  display: none;
+}
+
+.app[data-state='playing'] [data-id='start'],
+.app[data-state='playing'] [data-id='settingsState'],
+.app[data-state='playing'] [data-id='cancel'],
+.app[data-state='playing'] [data-id='imerForSetWrapper'],
+.app[data-state='playing'] [data-id='save'] {
+  display: none;
+}
+
+.app[data-state='settings'] [data-id='timerTime'],
+.app[data-state='settings'] [data-id='start'],
+.app[data-state='settings'] [data-id='pauseandcontinue'],
+.app[data-state='settings'] [data-id='stop'] {
+  display: none;
+}
